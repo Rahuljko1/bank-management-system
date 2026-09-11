@@ -1,61 +1,619 @@
+/* =====================================================
+   SMART BANK - MAIN CSS
+   ===================================================== */
+
+
+/* ================= GENERAL ================= */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f7fa;
+    color: #1f2937;
+    line-height: 1.6;
 }
-.logo{
-    width: 10%;
-    border-radius: 50%;
-    padding: 0px;
-    margin: -10px;
+
+
+/* ================= HEADER ================= */
+
+header {
+    background-color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 20px 6%;
+
+    border-bottom: 1px solid #e5e7eb;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
-.flex{
-    display: flexbox;
+
+header div {
+    margin: 1vw;
+    white-space: nowrap;
+}
+
+img {
+    display: block;
+    width: 10vw;
+}
+
+/* Logo */
+
+header>div:first-child h1 {
+    color: #003b73;
+    font-size: 28px;
+    letter-spacing: 1px;
 
 }
-header {
-    background-color: #003366;
-    color: white;
-    padding: 20px 40px;
+
+header>div:first-child p {
+    color: #6b7280;
+    font-size: 12px;
+}
+
+
+/* Navigation */
+
+nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    gap: 25px;
+
 }
 
 nav a {
-    color: white;
     text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
+    background-color: #2BAE66;
+    font-size: 15px;
+    font-weight: 600;
+    padding: 10px 18px;
+    border: none;
+    border-radius: 6px;
+    color: #FCF6F5;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
 nav a:hover {
+    color: #2BAE66;
+    background-color: #adefd1;
+    transform: translateY(-2px);
+}
+
+
+/* Header Buttons */
+
+header>div:last-child {
+    display: flex;
+    gap: 10px;
+}
+
+header button {
+    padding: 10px 18px;
+
+    border: none;
+    border-radius: 6px;
+
+    background-color: #003b73;
+    color: white;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+    transition: 0.3s;
+}
+
+header button:hover {
+    background-color: #0066cc;
+    transform: translateY(-2px);
+}
+
+
+/* ================= MAIN ================= */
+
+main {
+    width: 100%;
+}
+
+
+/* ================= HERO ================= */
+
+main>section:first-child {
+    min-height: 550px;
+
+    padding: 70px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: linear-gradient(135deg,
+            #003b73,
+            #0066cc);
+
+    color: white;
+}
+
+
+/* Hero Text */
+
+main>section:first-child>div:first-child {
+    width: 50%;
+}
+
+main>section:first-child h2 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+main>section:first-child p {
+    font-size: 19px;
+    max-width: 550px;
+    margin-bottom: 30px;
+    color: #e5f1ff;
+}
+
+
+/* Hero Buttons */
+
+main>section:first-child button {
+    padding: 14px 25px;
+
+    margin-right: 10px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+main>section:first-child button:first-of-type {
+    background-color: white;
+    color: #003b73;
+}
+
+main>section:first-child button:last-of-type {
+    background-color: transparent;
+    color: white;
+
+    border: 1px solid white;
+}
+
+main>section:first-child button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* Hero Image */
+
+main>section:first-child>div:last-child {
+    width: 45%;
+}
+
+main>section:first-child img {
+    width: 100%;
+    max-width: 550px;
+
+    border-radius: 15px;
+
+    display: block;
+}
+
+
+/* ================= COMMON SECTIONS ================= */
+
+main>section:not(:first-child) {
+    padding: 80px 8%;
+}
+
+main>section:not(:first-child)>h2 {
+    text-align: center;
+
+    font-size: 34px;
+
+    margin-bottom: 45px;
+
+    color: #003b73;
+}
+
+
+/* ================= CARDS ================= */
+
+main article {
+    background-color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    transition: 0.3s;
+}
+
+main article:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+main article h3 {
+    color: #003b73;
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+main article p {
+    color: #6b7280;
+
+    margin-bottom: 20px;
+}
+
+main article a {
+    color: #0066cc;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+main article a:hover {
     text-decoration: underline;
 }
 
-.flex section {
+
+/* ================= QUICK SERVICES ================= */
+
+main>section:nth-child(2)>div {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ================= BANKING PRODUCTS ================= */
+
+main>section:nth-child(3)>div {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================= WHY SMART BANK ================= */
+
+main>section:nth-child(4) {
+    background-color: #eef5fb;
+}
+
+main>section:nth-child(4)>div {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================= OFFERS ================= */
+
+main>section:nth-child(5)>div {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================= ANNOUNCEMENTS ================= */
+
+main>section:nth-child(6) {
+    background-color: white;
+}
+
+main>section:nth-child(6) ul {
+    max-width: 900px;
+
+    margin: auto;
+
+    list-style: none;
+}
+
+main>section:nth-child(6) li {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+main>section:nth-child(6) li::before {
+    content: "→";
+
+    color: #0066cc;
+
+    font-weight: bold;
+
+    margin-right: 12px;
+}
+
+main>section:nth-child(6) a {
+    text-decoration: none;
+
+    color: #374151;
+}
+
+main>section:nth-child(6) a:hover {
+    color: #0066cc;
+}
+
+
+/* ================= CALL TO ACTION ================= */
+
+main>section:nth-child(7) {
     text-align: center;
-    padding: 80px 20px;
-    background-color: #f4f4f4;
+
+    background: linear-gradient(135deg,
+            #0066cc,
+            #003b73);
+
+    color: white;
 }
 
-section h2 {
-    font-size: 32px;
-    margin-bottom: 15px;
+main>section:nth-child(7) h2 {
+    color: white;
 }
 
-section p {
+main>section:nth-child(7) p {
+    margin-bottom: 25px;
+
     font-size: 18px;
-    color: #555;
 }
+
+main>section:nth-child(7) button {
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: white;
+
+    color: #003b73;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+main>section:nth-child(7) button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
 
 footer {
-    background-color: #003366;
+    background-color: #071b2f;
+
     color: white;
-    text-align: center;
-    padding: 15px;
+
+    padding: 60px 8%;
+
+    display: grid;
+
+    grid-template-columns: 2fr repeat(4, 1fr);
+
+    gap: 40px;
 }
+
+
+/* Footer Logo */
+
+footer h2 {
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+
+/* Footer Headings */
+
+footer h3 {
+    margin-bottom: 15px;
+
+    font-size: 17px;
+}
+
+
+/* Footer Text */
+
+footer p {
+    color: #aab7c4;
+
+    font-size: 14px;
+}
+
+
+/* Footer Links */
+
+footer a {
+    display: block;
+
+    color: #aab7c4;
+
+    text-decoration: none;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: white;
+
+    padding-left: 5px;
+}
+
+
+/* Copyright */
+
+footer>div:last-child {
+    grid-column: 1 / -1;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #294057;
+
+    text-align: center;
+}
+
+
+/* ================= RESPONSIVE ================= */
+
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+
+    header {
+        flex-wrap: wrap;
+
+        gap: 20px;
+    }
+
+    nav {
+        order: 3;
+
+        width: 100%;
+
+        justify-content: center;
+
+        flex-wrap: wrap;
+    }
+
+
+    main>section:first-child h2 {
+        font-size: 42px;
+    }
+
+
+    main>section:nth-child(2)>div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main>section:nth-child(3)>div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main>section:nth-child(4)>div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    main>section:nth-child(5)>div {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+
+    footer {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* Mobile */
+
+@media (max-width: 650px) {
+
+    header {
+        padding: 15px 5%;
+
+        flex-direction: column;
+    }
+
+    nav {
+        gap: 12px;
+    }
+
+    nav a {
+        font-size: 13px;
+    }
+
+
+    main>section:first-child {
+        flex-direction: column;
+
+        padding: 60px 5%;
+
+        text-align: center;
+    }
+
+    main>section:first-child>div:first-child {
+        width: 100%;
+    }
+
+    main>section:first-child>div:last-child {
+        width: 100%;
+    }
+
+    main>section:first-child h2 {
+        font-size: 36px;
+    }
+
+
+    main>section:not(:first-child) {
+        padding: 60px 5%;
+    }
+
+
+    main>section:nth-child(2)>div,
+    main>section:nth-child(3)>div,
+    main>section:nth-child(4)>div,
+    main>section:nth-child(5)>div {
+        grid-template-columns: 1fr;
+    }
+
+
+    footer {
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+    footer a:hover {
+        padding-left: 0;
+    }
+
+}
+
+```
