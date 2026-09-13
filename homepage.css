@@ -69,12 +69,13 @@ header>div:first-child p {
 /* Navigation */
 
 nav {
-    display: flex;
+    display: inline-flex;
     gap: 25px;
 
 }
 
 nav a {
+    white-space: nowrap;
     text-decoration: none;
     background-color: #2BAE66;
     font-size: 15px;
