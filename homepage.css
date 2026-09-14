@@ -5,125 +5,102 @@
 
 /* ================= GENERAL ================= */
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 html {
     scroll-behavior: smooth;
 }
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #f5f7fa;
-    color: red;
-    line-height: 1.6;
-}
 
 
 /* ================= HEADER ================= */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
 
-header {
-    background-color: white;
+ body {
+     font-family: Arial, sans-serif;
+     background: #f4f4f4;
+ }
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+ /* Header is made flexible so logo, title and menu align properly */
+ header {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     width: 100%;
+     min-height: 80px;
+     padding: 0 20px;
+     background-color: rgb(160, 142, 228);
+     gap: 20px;
+     flex-wrap: wrap;
+ }
 
-    padding: 20px 6%;
+ /* Logo section kept separate for clean alignment */
+ .logo {
+     display: flex;
+     gap: 10px;
+     align-items: center;
+ }
 
-    border-bottom: 1px solid #e5e7eb;
+ .logo img {
+     border-radius: 50%;
+     width: 4rem;
+     height: 4rem;
+     object-fit: cover;
+ }
 
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
+ /* Brand text styling improved for readability */
+ .name {
+     color: rgb(238, 238, 238);
+     white-space: nowrap;
+ }
 
-header div {
-    margin: 1vw;
-    white-space: nowrap;
-}
+ .name h1 {
+     font-size: 1.8rem;
+ }
 
-img {
-    display: block;
-    width: 10vw;
-}
+ .name h2 {
+     font-size: 1rem;
+     font-weight: 400;
+ }
 
-/* Logo */
+ /* Navigation menu is spaced out and easy to read */
+ .menu {
+     display: flex;
+     align-items: center;
+ }
 
-header>div:first-child h1 {
-    color: #003b73;
-    font-size: 28px;
-    letter-spacing: 1px;
+ .menu-bar {
+     display: flex;
+     gap: 20px;
+     list-style: none;
+     flex-wrap: wrap;
+ }
 
-}
+ .menu-bar li {
+     padding: 8px 12px;
+     background-color: rgb(84, 186, 49);
+     color: white;
+     border-radius: 6px;
+     cursor: pointer;
+ }
 
-header>div:first-child p {
-    color: #6b7280;
-    font-size: 12px;
-}
+ /* Buttons are styled for a proper action area */
+ .log {
+     display: flex;
+     gap: 10px;
+ }
 
-
-/* Navigation */
-
-nav {
-    display:flex;
-    gap: 25px;
-
-}
-
-nav a {
-    white-space: nowrap;
-    text-decoration: none;
-    background-color: #2BAE66;
-    font-size: 15px;
-    font-weight: 600;
-    padding: 10px 18px;
-    border: none;
-    border-radius: 6px;
-    color: #FCF6F5;
-    cursor: pointer;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #2BAE66;
-    background-color: #adefd1;
-    transform: translateY(-2px);
-}
-
-
-/* Header Buttons */
-
-header>div:last-child {
-    display: flex;
-    gap: 10px;
-}
-
-header button {
-    padding: 10px 18px;
-    display: flex;
-    border: none;
-    border-radius: 6px;
-
-    background-color: #003b73;
-    color: white;
-
-    cursor: pointer;
-
-    font-weight: 600;
-
-    transition: 0.3s;
-}
-
-header button:hover {
-    background-color: #0066cc;
-    transform: translateY(-2px);
-}
-
-
+ .log button {
+     padding: 8px 14px;
+     border: none;
+     border-radius: 6px;
+     background: #fff;
+     color: #333;
+     cursor: pointer;
+ }
 /* ================= MAIN ================= */
 
 main {
@@ -498,122 +475,30 @@ footer>div:last-child {
 
     text-align: center;
 }
-
-
-/* ================= RESPONSIVE ================= */
-
-
-/* Tablet */
-
-@media (max-width: 1000px) {
-
+@media screen and (max-width:900px) {
     header {
-        flex-wrap: wrap;
-
-        gap: 20px;
-    }
-
-    nav {
-        order: 3;
-
-        width: 100%;
-
-        justify-content: center;
-
-        flex-wrap: wrap;
-    }
-
-
-    main>section:first-child h2 {
-        font-size: 42px;
-    }
-
-
-    main>section:nth-child(2)>div {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    main>section:nth-child(3)>div {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    main>section:nth-child(4)>div {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    main>section:nth-child(5)>div {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-
-    footer {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-
-/* Mobile */
-
-@media (max-width: 650px) {
-
-    header {
-        padding: 15px 5%;
-
         flex-direction: column;
+        align-items: flex-start;
+        padding: 18px 20px;
     }
 
-    nav {
-        gap: 12px;
-    }
-
-    nav a {
-        font-size: 13px;
-    }
-
-
-    main>section:first-child {
-        flex-direction: column;
-
-        padding: 60px 5%;
-
-        text-align: center;
-    }
-
-    main>section:first-child>div:first-child {
+    .logo,
+    .menu,
+    .log {
         width: 100%;
     }
 
-    main>section:first-child>div:last-child {
+    .menu-bar {
+        display: flexbox;
         width: 100%;
+        justify-content: flex-start;
     }
 
-    main>section:first-child h2 {
-        font-size: 36px;
-    }
-
-
-    main>section:not(:first-child) {
-        padding: 60px 5%;
-    }
-
-
-    main>section:nth-child(2)>div,
-    main>section:nth-child(3)>div,
-    main>section:nth-child(4)>div,
-    main>section:nth-child(5)>div {
-        grid-template-columns: 1fr;
-    }
-
-
-    footer {
-        grid-template-columns: 1fr;
-
-        text-align: center;
-    }
-
-    footer a:hover {
+    .log {
+        display: flexbox;
+        justify-content: flex-end;
+        margin-right: auto;
+        margin-bottom: 10px;
         padding-left: 0;
     }
-
 }
-

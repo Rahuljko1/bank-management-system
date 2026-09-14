@@ -15,40 +15,35 @@
 
     <!-- ================= HEADER ================= -->
 
-    <header>
+<header>
+    <!-- Logo section added for branding -->
+    <div class="logo">
+        <img src="https://imgs.search.brave.com/Sh52NPz0luj8qTbndXIzxNLs7Gcvhu0LKyhEHnSbSbU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tdmVj/dG9yL2JhbmstYnVp/bGRpbmctaWNvbl8x/MzAxMjcwLTEyMjQw/LmpwZz9nYT1HQTEu/MS4xMTgwNjI5NDc2/LjE3ODgyOTgzMjEm/c2VtdD1haXNfaHli/cmlkJnc9NzQwJnE9/ODA"
+            alt="Smart Bank Logo">
 
-        <!-- Bank Logo / Name -->
-        <div>
-            <img src="https://imgs.search.brave.com/Sh52NPz0luj8qTbndXIzxNLs7Gcvhu0LKyhEHnSbSbU/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tdmVj/dG9yL2JhbmstYnVp/bGRpbmctaWNvbl8x/MzAxMjcwLTEyMjQw/LmpwZz9nYT1HQTEu/MS4xMTgwNjI5NDc2/LjE3ODgyOTgzMjEm/c2VtdD1haXNfaHli/cmlkJnc9NzQwJnE9/ODA"
-                alt="">
-        </div>
-        <div>
+        <!-- Brand title changed to a more professional page heading -->
+        <span class="name">
             <h1>SMART BANK</h1>
-            <p>Banking Made Simple</p>
-        </div>
-        <!-- Main Navigation -->
-        <nav>
+            <h2>Banking made simple</h2>
+        </span>
+    </div>
 
-            <a href="#">Home</a>
-            <a href="#">Accounts</a>
-            <a href="#">Loans</a>
-            <a href="#">Cards</a>
-            <a href="#">Investments</a>
-            <a href="#">Services</a>
-            <a href="#">About Us</a>
+    <!-- Nav menu is inside a list for better semantics and accessibility -->
+    <nav class="menu" aria-label="Main navigation">
+        <ul class="menu-bar">
+            <li>Home</li>
+            <li>About</li>
+            <li>Contact</li>
+            <li>Services</li>
+        </ul>
+    </nav>
 
-        </nav>
-
-        <!-- Header Actions -->
-        <div>
-
-            <button>Search</button>
-            <button>Login</button>
-
-        </div>
-
-    </header>
-
+    <!-- Login and search buttons are grouped for actions -->
+    <div class="log">
+        <button type="button">Login</button>
+        <button type="button">Search</button>
+    </div>
+</header>
 
     <!-- ================= MAIN CONTENT ================= -->
 
