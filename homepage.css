@@ -2,106 +2,172 @@
    SMART BANK - MAIN CSS
    ===================================================== */
 
-
 /* ================= GENERAL ================= */
-
 
 html {
     scroll-behavior: smooth;
 }
 
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    color: #f4f4f4;
+    background: #333;
+}
 
-/* ================= HEADER ================= */
- * {
-     margin: 0;
-     padding: 0;
-     box-sizing: border-box;
- }
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgb(0 0 0 / 35%);
+    pointer-events: none;
+    z-index: 1;
+}
 
- body {
-     font-family: Arial, sans-serif;
-     background: #f4f4f4;
- }
+header,
+main {
+    position: relative;
+    z-index: 2;
+}
 
- /* Header is made flexible so logo, title and menu align properly */
- header {
-     display: flex;
-     align-items: center;
-     justify-content: space-between;
-     width: 100%;
-     min-height: 80px;
-     padding: 0 20px;
-     background-color: rgb(160, 142, 228);
-     gap: 20px;
-     flex-wrap: wrap;
- }
+header {
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 80px;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+}
 
- /* Logo section kept separate for clean alignment */
- .logo {
-     display: flex;
-     gap: 10px;
-     align-items: center;
- }
+.logo,
+.log {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
 
- .logo img {
-     border-radius: 50%;
-     width: 4rem;
-     height: 4rem;
-     object-fit: cover;
- }
+.logo {
+    order: 1;
+    border: 1px solid rgba(60, 60, 60, 0.65);
+    padding: 8px 6px;
+    cursor: default;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgb(255 255 255 / 18%), rgb(255 255 255 / 5%));
+    box-shadow: 0 4px 24px rgb(0 0 0 / 25%), inset 0 1px 0 rgb(255 255 255 / 25%);
+    backdrop-filter: blur(8px);
+    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+}
 
- /* Brand text styling improved for readability */
- .name {
-     color: rgb(238, 238, 238);
-     white-space: nowrap;
- }
+.logo img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
- .name h1 {
-     font-size: 1.8rem;
- }
+.name {
+    white-space: nowrap;
+    color: rgb(238, 238, 238);
+}
 
- .name h2 {
-     font-size: 1rem;
-     font-weight: 400;
- }
+.name h1 {
+    font-size: 1.8rem;
+}
 
- /* Navigation menu is spaced out and easy to read */
- .menu {
-     display: flex;
-     align-items: center;
- }
+.name h2 {
+    font-size: 1rem;
+    font-weight: 400;
+}
 
- .menu-bar {
-     display: flex;
-     gap: 20px;
-     list-style: none;
-     flex-wrap: wrap;
- }
+.menu {
+    
+    order: 3;
+    display: flex;
+    align-items: center;
+    width: min(46%, 500px);
+    min-width: 260px;
+    border: 1px solid rgb(255 255 255 / 35%);
+    border-radius: 30px;
+    background: rgb(255 255 255 / 15%);
+    backdrop-filter: blur(10px);
+    transition: transform .45s ease, box-shadow .45s ease;
+}
 
- .menu-bar li {
-     padding: 8px 12px;
-     background-color: rgb(84, 186, 49);
-     color: white;
-     border-radius: 6px;
-     cursor: pointer;
- }
+.menu:hover {
+    transform: translate(10px) scale(1.04);
+    box-shadow: 0 10px 24px rgb(0 0 0 / 25%);
+}
 
- /* Buttons are styled for a proper action area */
- .log {
-     display: flex;
-     gap: 10px;
- }
+.menu-bar {
+    display: flex;
+    
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    gap: 15px;
+    width: 100%;
+    padding: 12px 22px;
+    list-style: none;
+    transition: transform .45s ease;
+}
 
- .log button {
-     padding: 8px 14px;
-     border: none;
-     border-radius: 6px;
-     background: #fff;
-     color: #333;
-     cursor: pointer;
- }
-/* ================= MAIN ================= */
+.menu-bar li {
+    list-style: none;
+}
+
+.menu-bar a {
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.menu-bar a:hover,
+.menu-bar a:focus-visible {
+    color: #000;
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+.log {
+    flex: 0 0 auto;
+    order: 4;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+button {
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 7px;
+    color: #333;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+button:hover,
+button:focus-visible {
+    color: #fff;
+    background: brown;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: scale(.98);
+}
 
 main {
     width: 100%;
@@ -475,30 +541,31 @@ footer>div:last-child {
 
     text-align: center;
 }
-@media screen and (max-width:900px) {
-    header {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 18px 20px;
-    }
-
-    .logo,
-    .menu,
-    .log {
-        width: 100%;
-    }
-
-    .menu-bar {
-        display: flexbox;
-        width: 100%;
-        justify-content: flex-start;
-    }
-
-    .log {
-        display: flexbox;
-        justify-content: flex-end;
-        margin-right: auto;
-        margin-bottom: 10px;
-        padding-left: 0;
-    }
+@media screen and (max-width:850px) {
+   
+        /* Switch to a mobile-friendly stacked layout. */
+        header {
+            justify-content: center;
+            padding: 5px;
+        }
+    
+        .logo {
+            margin-right: auto;
+        }
+    
+        .log {
+            order: 2;
+            margin-left: 0;
+            justify-content: flex-end;
+        }
+    
+        .menu {
+            width: 100%;
+        }
+    
+        .menu-bar {
+            justify-content: space-evenly;
+        }
 }
+
+
