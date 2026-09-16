@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bank | Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+    <main class="page">
+        <section class="box" id="login-box" aria-labelledby="login-title">
+            <a class="home" href="homepage.html">← Home</a>
+            <div class="logo" aria-hidden="true">SB</div>
+            <p class="bank">SMART BANK</p>
+            <h1 id="login-title">Welcome back</h1>
+            <p class="text">Sign in to manage your account securely.</p>
+
+            <form action="#" method="post">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" autocomplete="username" required>
+
+                <label for="password">Password</label>
+                <input id="password" name="password" type="password" autocomplete="current-password" required>
+
+                <div class="options">
+                    <label class="save"><input type="checkbox" name="remember"> Remember me</label>
+                    <a href="#forgot-password">Forgot password?</a>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="new-user">Don't have an account? <button class="link-button" id="show-signup" type="button">Create one</button></p>
+        </section>
+
+        <section class="box hide" id="signup-box" aria-labelledby="signup-title">
+            <a class="home" href="homepage.html">← Home</a>
+            <div class="logo" aria-hidden="true">SB</div>
+            <p class="bank">SMART BANK</p>
+            <h1 id="signup-title">Create account</h1>
+            <p class="text">Fill in your details to create an account.</p>
+
+            <form action="#" method="post">
+                <label for="new-username">Username</label>
+                <input id="new-username" name="new-username" type="text" autocomplete="username" required>
+
+                <label for="email">Email address</label>
+                <input id="email" name="email" type="email" autocomplete="email" required>
+
+                <label for="new-password">Password</label>
+                <input id="new-password" name="new-password" type="password" autocomplete="new-password" required>
+
+                <button type="submit">Create account</button>
+            </form>
+
+            <p class="new-user">Already have an account? <button class="link-button" id="show-login" type="button">Sign in</button></p>
+        </section>
+    </main>
+    <script src="login.js"></script>
+</body>
+
+</html>

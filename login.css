@@ -1,0 +1,207 @@
+/* Basic colors used on the page */
+:root {
+  --dark-blue: #14213d;
+  --blue: #1f5fbf;
+  --text: #1f2937;
+  --gray: #64748b;
+  --border: #d7dde8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  background: #edf3fa;
+}
+
+/* Centers the login box on the page */
+.page {
+  display: grid;
+  min-height: 100vh;
+  padding: 24px;
+  place-items: center;
+}
+
+/* Main white login card */
+.box {
+  width: min(100%, 420px);
+  padding: 30px 42px 42px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 18px 45px rgb(20 33 61 / 15%);
+}
+
+/* Hides a box until JavaScript shows it. */
+.hide {
+  display: none;
+}
+
+/* Link back to homepage */
+.home {
+  display: inline-block;
+  margin-bottom: 16px;
+  color: var(--blue);
+  font-size: .9rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.home:hover {
+  text-decoration: underline;
+}
+
+/* Bank initials shown above the title */
+.logo {
+  display: grid;
+  width: 48px;
+  aspect-ratio: 1;
+  margin: 0 auto 12px;
+  border-radius: 12px;
+  color: #fff;
+  font-weight: 700;
+  place-items: center;
+  background: var(--dark-blue);
+}
+
+.bank {
+  margin: 0;
+  color: var(--blue);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-align: center;
+}
+
+h1 {
+  margin: 22px 0 8px;
+  color: var(--dark-blue);
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+.text,
+.new-user {
+  color: var(--gray);
+  font-size: .9rem;
+  text-align: center;
+}
+
+.text {
+  margin: 0 0 28px;
+}
+
+form {
+  display: grid;
+  gap: 9px;
+}
+
+form > label {
+  margin-top: 8px;
+  font-size: .88rem;
+  font-weight: 700;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  outline: none;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus {
+  border-color: var(--blue);
+  box-shadow: 0 0 0 3px rgb(31 95 191 / 15%);
+}
+
+/* Remember-me and forgot-password row */
+.options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 8px 0 14px;
+  font-size: .8rem;
+}
+
+.save {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--gray);
+}
+
+.options a,
+.new-user a,
+.link-button {
+  color: var(--blue);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.options a:hover,
+.new-user a:hover,
+.link-button:hover {
+  text-decoration: underline;
+}
+
+/* Makes the Create one and Sign in buttons look like normal links. */
+.link-button {
+  width: auto;
+  padding: 0;
+  border: 0;
+  cursor: pointer;
+  background: transparent;
+}
+
+.link-button:hover,
+.link-button:focus-visible {
+  color: var(--blue);
+  background: transparent;
+}
+
+button {
+  width: 100%;
+  padding: 13px;
+  border: 0;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  background: var(--dark-blue);
+}
+
+button:hover,
+button:focus-visible {
+  background: var(--blue);
+}
+
+.new-user {
+  margin: 24px 0 0;
+}
+
+@media (max-width: 460px) {
+  .page {
+    padding: 16px;
+  }
+
+  .box {
+    padding: 24px;
+  }
+
+  .options {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
