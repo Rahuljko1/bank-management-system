@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bank | Loans</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <header class="top"><a class="brand" href="homepage.html">SMART BANK</a>
+        <nav class="nav"><a href="dashboard.html">Dashboard</a><a href="accounts.html">Accounts</a><a
+                href="transfer.html">Transfer</a><a href="payments.html">Payments</a><a class="active"
+                href="loans.html">Loans</a></nav>
+    </header>
+    <main class="page">
+        <h1 class="title">Loans</h1>
+        <p class="subtitle">Choose a loan type for your college project demo.</p>
+        <section class="grid three">
+            <article class="service">
+                <h2>Personal loan</h2>
+                <p>Starting at 10.5% interest per year.</p><a class="button" href="#apply">Apply now</a>
+            </article>
+            <article class="service">
+                <h2>Home loan</h2>
+                <p>Starting at 8.4% interest per year.</p><a class="button" href="#apply">Apply now</a>
+            </article>
+            <article class="service">
+                <h2>Education loan</h2>
+                <p>Starting at 9.1% interest per year.</p><a class="button" href="#apply">Apply now</a>
+            </article>
+        </section>
+        <section class="box" id="apply" style="max-width:620px;margin-top:28px">
+            <h2>Loan application</h2>
+            <p class="subtitle">Submit your demo application.</p>
+            <form action="dashboard.html"><label for="loan-type">Loan type</label><select id="loan-type">
+                    <option>Personal loan</option>
+                    <option>Home loan</option>
+                    <option>Education loan</option>
+                </select><label for="loan-amount">Required amount</label><input id="loan-amount" type="number"
+                    required><label for="income">Monthly income</label><input id="income" type="number" required><button
+                    type="submit">Submit application</button></form>
+        </section>
+    </main>
+    <footer class="footer">Smart Bank college project demo</footer>
+</body>
+
+</html>

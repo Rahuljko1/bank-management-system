@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Bank | Transfer</title>
+    <link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+    <header class="top"><a class="brand" href="homepage.html">SMART BANK</a>
+        <nav class="nav"><a href="dashboard.html">Dashboard</a><a href="accounts.html">Accounts</a><a class="active"
+                href="transfer.html">Transfer</a><a href="transactions.html">Transactions</a><a
+                href="profile.html">Profile</a></nav>
+    </header>
+    <main class="page">
+        <h1 class="title">Transfer money</h1>
+        <p class="subtitle">Enter receiver details to make a demo transfer.</p>
+        <section class="box" style="max-width:620px">
+            <form action="transactions.html"><label for="from">From account</label><select id="from" required>
+                    <option>Savings account •••• 4821</option>
+                    <option>Salary account •••• 9190</option>
+                </select><label for="receiver">Receiver name</label><input id="receiver" type="text" required><label
+                    for="account">Receiver account number</label><input id="account" type="text" required><label
+                    for="ifsc">IFSC code</label><input id="ifsc" type="text" required><label
+                    for="amount">Amount</label><input id="amount" type="number" min="1" placeholder="₹ 0.00"
+                    required><label for="note">Note (optional)</label><textarea id="note"
+                    placeholder="Payment note"></textarea><button type="submit">Continue transfer</button></form>
+        </section>
+    </main>
+    <footer class="footer">Smart Bank college project demo</footer>
+</body>
+
+</html>

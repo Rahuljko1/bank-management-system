@@ -286,7 +286,7 @@ main>section:not(:first-child)>h2 {
 
     margin-bottom: 45px;
 
-    color: #003b73;
+    color: #e62c2c;
 }
 
 
@@ -357,12 +357,16 @@ main>section:nth-child(3)>div {
 
     gap: 25px;
 }
+main>section:nth-child(odd){
+    
+    background-color: #eef5fb;
+}
 
 
 /* ================= WHY SMART BANK ================= */
 
-main>section:nth-child(4) {
-    background-color: #eef5fb;
+main>section:nth-child(even) {
+    background-color: #333 !important;
 }
 
 main>section:nth-child(4)>div {
@@ -418,11 +422,11 @@ main>section:nth-child(6) li::before {
 main>section:nth-child(6) a {
     text-decoration: none;
 
-    color: #374151;
+    color: #f5f6f7;
 }
 
 main>section:nth-child(6) a:hover {
-    color: #0066cc;
+    color: #fdfdfd;
 }
 
 
