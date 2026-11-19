@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <meta name="description" content="Explore the Smart Bank money transfer flow.">
+    <title>Smart Bank | Transfer</title>
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/editorial.css">
+</head>
+
+<body class="app-page" data-page="transfer">
+    <header aria-label="Site header"></header>
+    <main class="page app-content">
+        <h1 class="title">Transfer money</h1>
+        <p class="subtitle">Transfer fictional ₹ units between fictional accounts.</p>
+        <p data-api-message class="api-message" role="status" aria-live="polite" hidden></p>
+        <section class="box narrow-panel">
+            <form id="transfer-form">
+                <label for="from-account">From account</label><select id="from-account" name="fromAccountId" required><option>Loading your accounts…</option></select>
+                <label for="beneficiary">Saved beneficiary (optional)</label><select id="beneficiary" name="beneficiaryId"><option>Loading beneficiaries…</option></select>
+                <label for="receiver-account">Receiver account number</label><input id="receiver-account" name="toAccountNumber" inputmode="numeric" pattern="[0-9]{12}" minlength="12" maxlength="12" autocomplete="off" required>
+                <label for="ifsc">IFSC</label><input id="ifsc" name="toIfsc" pattern="[A-Za-z]{4}0[A-Za-z0-9]{6}" maxlength="11" autocapitalize="characters" required>
+                <label for="amount">Amount (₹)</label><input id="amount" name="amount" type="number" min="0.01" step="0.01" required>
+                <label for="note">Note (optional)</label><input id="note" name="note" maxlength="120">
+                <button type="submit">Review transfer</button>
+            </form>
+            <section id="transfer-review" class="transfer-review" hidden aria-labelledby="review-title">
+                <h2 id="review-title">Confirm fictional transfer</h2>
+                <p>Destination: <strong data-review-destination></strong></p>
+                <p>Amount: <strong data-review-amount></strong></p>
+                <p class="subtitle">Review the recipient and amount before completing this fictional transfer. This confirmation is not real transaction authorization.</p>
+                <button type="button" class="button secondary" data-edit-transfer>Edit details</button>
+                <form id="transfer-confirm-form"><button type="submit">Complete fictional transfer</button></form>
+            </section>
+            <section id="transfer-otp" class="transfer-review" hidden aria-labelledby="otp-title">
+                <h2 id="otp-title">Verify fictional OTP</h2>
+                <p data-demo-otp class="api-message success"></p>
+                <p data-otp-expiry></p>
+                <form id="transfer-otp-form"><label for="transfer-otp-code">6-digit OTP</label><input id="transfer-otp-code" name="otp" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required><button type="submit">Verify and complete</button></form>
+                <button type="button" class="button secondary" data-cancel-otp>Back to review</button>
+            </section>
+        </section>
+    </main>
+    <footer aria-label="Site footer"></footer>
+    <script type="module" src="../js/hey.js?v=session-nav-1"></script>
+</body>
+
+</html>

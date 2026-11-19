@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <meta name="description" content="Explore Smart Bank loan options and learn about borrowing services.">
+    <title>Smart Bank | Loans</title>
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/editorial.css">
+</head>
+
+<body class="marketing-page" data-page="loans">
+    <header aria-label="Site header"></header>
+    <main class="page content-page">
+        <h1 class="title">Loans</h1>
+        <p class="subtitle">Choose a loan type for your college project.</p>
+        <section class="grid content-list">
+            <article class="service">
+                <h2>Personal loan</h2>
+                <p>Sample rate: 10.5% per year. Not a real offer.</p><a class="button" href="#emi-calculator" data-rate="10.5">Estimate monthly payment</a>
+            </article>
+            <article class="service">
+                <h2>Home loan</h2>
+                <p>Sample rate: 8.4% per year. Not a real offer.</p><a class="button" href="#emi-calculator" data-rate="8.4">Estimate monthly payment</a>
+            </article>
+            <article class="service">
+                <h2>Education loan</h2>
+                <p>Sample rate: 9.1% per year. Not a real offer.</p><a class="button" href="#emi-calculator" data-rate="9.1">Estimate monthly payment</a>
+            </article>
+        </section>
+        <section class="box narrow-panel" id="emi-calculator">
+            <h2>EMI calculator</h2>
+            <p class="subtitle">Estimate a monthly payment using sample rates for learning purposes; no loan application is submitted.</p>
+            <form id="emi-form"><label for="emi-amount">Principal (₹)</label><input id="emi-amount" name="amount" type="number" min="1" step="0.01" required><label for="emi-rate">Annual interest rate (%)</label><input id="emi-rate" name="rate" type="number" min="0" step="0.01" value="10.5" required><label for="emi-months">Term (months)</label><input id="emi-months" name="months" type="number" min="1" max="600" value="12" required></form>
+            <p class="emi-result" data-emi-result role="status" aria-live="polite">Enter loan details to estimate EMI.</p>
+        </section>
+    </main>
+    <footer aria-label="Site footer"></footer>
+    <script type="module" src="../js/hey.js"></script>
+</body>
+
+</html>

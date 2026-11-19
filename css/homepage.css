@@ -1,0 +1,697 @@
+/* =====================================================
+   SMART BANK - MAIN CSS
+   ===================================================== */
+
+/* ================= GENERAL ================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --home-navy: #003b73;
+    --home-blue: #0066cc;
+    --home-card: #fff;
+    --home-light: #eef5fb;
+}
+* {
+    /* Apply predictable sizing and remove browser default spacing. */
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* Set the page's base appearance and prevent horizontal scrolling. */
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+    color: #f4f4f4;
+    background: #333;
+}
+
+body::before {
+    /* Add a dark overlay so foreground text remains readable. */
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgb(0 0 0 / 35%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+header,
+main {
+    /* Place content above the video and overlay. */
+    position: relative;
+    z-index: 2;
+}
+
+header {
+    /* Arrange the logo, navigation, and action area responsively. */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 80px;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+}
+
+.logo,
+.log {
+    /* Align items inside the header sections. */
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    /* Style the site logo container. */
+    border: 1px solid rgba(60, 60, 60, 0.65);
+    padding: 8px 6px;
+    cursor: default;
+    border-radius: 16px;
+    background: linear-gradient(135deg, rgb(255 255 255 / 18%), rgb(255 255 255 / 5%));
+    box-shadow: 0 4px 24px rgb(0 0 0 / 25%), inset 0 1px 0 rgb(255 255 255 / 25%);
+    backdrop-filter: blur(8px);
+    transition: border-color .25s ease, box-shadow .25s ease, transform .25s ease;
+    order: 1;
+}
+
+.log {
+    /* Keep the action area aligned to the right on large screens. */
+    flex: 0 0 auto;
+    order: 4;
+    margin-left: auto;
+    justify-content: flex-end;
+}
+
+.logo img {
+    /* Display the logo image as a circular icon. */
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.name {
+    /* Prevent the brand name from wrapping. */
+    white-space: nowrap;
+}
+
+.name h1 {
+    font-size: 1.8rem;
+}
+
+.name h2 {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.menu {
+    /* Create a translucent, blurred navigation container. */
+    order: 3;
+    width: min(46%, 500px);
+    min-width: 260px;
+    border: 1px solid rgb(255 255 255 / 35%);
+    border-radius: 30px;
+    background: rgb(255 255 255 / 15%);
+    backdrop-filter: blur(10px);
+    transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.menu:hover {
+    /* Lift and enlarge the navigation when hovered. */
+    transform: translate(10px) scale(1.04);
+    box-shadow: 0 10px 24px rgb(0 0 0 / 25%);
+}
+
+.menu-bar {
+    /* Arrange navigation links in one horizontal row. */
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    padding: 12px 18px;
+    list-style: none;
+    transition: transform 0.45s ease;
+}
+
+.menu-bar:hover {
+    /* Slightly compress the navigation row on hover. */
+    transform: scaleX(.98);
+}
+
+.menu-bar a {
+    /* Style each navigation link like a button. */
+    display: block;
+    padding: 8px 12px;
+    border-radius: 6px;
+    color: #fff;
+    background: #000;
+    text-decoration: none;
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+.menu-bar a:hover,
+.menu-bar a:focus-visible {
+    /* Highlight links for mouse and keyboard users. */
+    color: #000;
+    background: #fff;
+    transform: translateY(-2px);
+}
+
+button {
+    /* Use a consistent style for buttons. */
+    padding: 8px 14px;
+    border: 0;
+    border-radius: 7px;
+    color: #333;
+    background: #fff;
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 12%);
+    transition: background-color .2s ease, color .2s ease, transform .2s ease;
+}
+
+button:hover,
+button:focus-visible {
+    /* Provide hover and keyboard-focus feedback. */
+    color: #fff;
+    background: brown;
+    transform: translateY(-2px);
+}
+
+button:active {
+    /* Give pressed buttons a small click effect. */
+    transform: scale(.98);
+}
+
+
+/* ================= HERO ================= */
+
+main>section:first-child {
+    min-height: 550px;
+
+    padding: 70px 8%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 50px;
+
+    background: linear-gradient(135deg,
+            var(--home-navy),
+            var(--home-blue));
+
+    color: white;
+}
+
+
+/* Hero Text */
+
+main>section:first-child>div:first-child {
+    width: 50%;
+}
+
+main>section:first-child h1 {
+    font-size: 52px;
+    line-height: 1.1;
+    margin-bottom: 25px;
+}
+
+main>section:first-child p {
+    font-size: 19px;
+    max-width: 550px;
+    margin-bottom: 30px;
+    color: #e5f1ff;
+}
+
+
+/* Hero Buttons */
+
+main>section:first-child button,
+main>section:first-child .hero-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 25px;
+
+    margin-right: 10px;
+
+    border: none;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+main>section:first-child .hero-button.primary {
+    background-color: var(--home-card);
+    color: var(--home-navy);
+}
+
+main>section:first-child .hero-button.secondary {
+    background-color: transparent;
+    color: white;
+
+    border: 1px solid white;
+}
+
+main>section:first-child button:hover,
+main>section:first-child .hero-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* Hero Image */
+
+main>section:first-child>div:last-child {
+    width: 45%;
+}
+
+main>section:first-child img {
+    width: 100%;
+    max-width: 550px;
+
+    border-radius: 15px;
+
+    display: block;
+}
+
+
+/* ================= COMMON SECTIONS ================= */
+
+main>section:not(:first-child) {
+    padding: 80px 8%;
+}
+
+main>section:not(:first-child)>h2 {
+    text-align: center;
+
+    font-size: 34px;
+
+    margin-bottom: 45px;
+
+    color: var(--home-navy);
+}
+
+
+/* ================= CARDS ================= */
+
+main article {
+    background-color: var(--home-card);
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    border: 1px solid #e5e7eb;
+
+    transition: 0.3s;
+}
+
+main article:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+main article h3 {
+    color: var(--home-navy);
+
+    font-size: 21px;
+
+    margin-bottom: 12px;
+}
+
+main article p {
+    color: #6b7280;
+
+    margin-bottom: 20px;
+}
+
+main article a {
+    color: var(--home-blue);
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+main article a:hover {
+    text-decoration: underline;
+}
+
+
+/* ================= QUICK SERVICES ================= */
+
+main>section:nth-child(2)>div {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 20px;
+}
+
+
+/* ================= BANKING PRODUCTS ================= */
+
+main>section:nth-child(3)>div {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+main>section:nth-child(odd){
+    
+    background-color: var(--home-light);
+}
+
+
+/* ================= WHY SMART BANK ================= */
+
+main>section:nth-child(even) {
+    background-color: #333;
+    color: #fff;
+}
+
+main>section:nth-child(even)>h2 { color: #fff; }
+
+main>section:nth-child(4)>div {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================= OFFERS ================= */
+
+main>section:nth-child(5)>div {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+}
+
+
+/* ================= ANNOUNCEMENTS ================= */
+
+main>section:nth-child(6) {
+    background-color: var(--home-card);
+}
+
+main>section:nth-child(6) ul {
+    max-width: 900px;
+
+    margin: auto;
+
+    list-style: none;
+}
+
+main>section:nth-child(6) li {
+    padding: 18px 20px;
+
+    border-bottom: 1px solid #e5e7eb;
+}
+
+main>section:nth-child(6) li::before {
+    content: "→";
+
+    color: var(--home-blue);
+
+    font-weight: bold;
+
+    margin-right: 12px;
+}
+
+main>section:nth-child(6) a {
+    text-decoration: none;
+
+    color: var(--home-navy);
+}
+
+main>section:nth-child(6) a:hover {
+    color: var(--home-blue);
+}
+
+
+/* ================= CALL TO ACTION ================= */
+
+main>section:nth-child(7) {
+    text-align: center;
+
+    background: linear-gradient(135deg,
+            var(--home-blue),
+            var(--home-navy));
+
+    color: white;
+}
+
+main>section:nth-child(7) h2 {
+    color: white;
+}
+
+main>section:nth-child(7) p {
+    margin-bottom: 25px;
+
+    font-size: 18px;
+}
+
+main>section:nth-child(7) button,
+main>section:nth-child(7) .hero-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 30px;
+
+    border: none;
+
+    border-radius: 6px;
+
+    background-color: var(--home-card);
+
+    color: var(--home-navy);
+    text-decoration: none;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+main>section:nth-child(7) button:hover,
+main>section:nth-child(7) .hero-button:hover {
+    transform: translateY(-3px);
+}
+
+
+/* ================= FOOTER ================= */
+
+footer {
+    background-color: #071b2f;
+
+    color: white;
+
+    padding: 60px 8%;
+
+    display: grid;
+
+    grid-template-columns: 2fr repeat(4, 1fr);
+
+    gap: 40px;
+}
+
+
+/* Footer Logo */
+
+footer h2 {
+    color: white;
+
+    margin-bottom: 10px;
+}
+
+
+/* Footer Headings */
+
+footer h3 {
+    margin-bottom: 15px;
+
+    font-size: 17px;
+}
+
+
+/* Footer Text */
+
+footer p {
+    color: #aab7c4;
+
+    font-size: 14px;
+}
+
+
+/* Footer Links */
+
+footer a {
+    display: block;
+
+    color: #aab7c4;
+
+    text-decoration: none;
+
+    margin-bottom: 8px;
+
+    font-size: 14px;
+
+    transition: 0.3s;
+}
+
+footer a:hover {
+    color: white;
+
+    padding-left: 5px;
+}
+
+
+/* Copyright */
+
+footer>div:last-child {
+    grid-column: 1 / -1;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #294057;
+
+    text-align: center;
+}
+@media screen and (max-width:1000px) {
+   
+        /* Switch to a mobile-friendly stacked layout. */
+        header {
+            justify-content: center;
+            padding: 5px;
+        }
+    
+        .logo {
+            margin-right: auto;
+        }
+    
+        .log {
+            order: 2;
+            margin-left: 0;
+            justify-content: flex-end;
+        }
+    
+        .menu {
+            width: 100%;
+        }
+    
+        .menu-bar {
+            justify-content: space-evenly;
+        }
+
+        /* Keep the page content usable on tablets and smaller laptops. */
+        main>section:first-child {
+            min-height: auto;
+            padding: 60px 6%;
+            gap: 35px;
+        }
+
+        main>section:first-child h1 {
+            font-size: clamp(38px, 5vw, 52px);
+        }
+
+        main>section:first-child>div:first-child,
+        main>section:first-child>div:last-child {
+            width: 50%;
+        }
+
+        main>section:nth-child(2)>div {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        main>section:nth-child(3)>div,
+        main>section:nth-child(4)>div {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        main>section:nth-child(5)>div {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        footer {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+}
+
+@media screen and (max-width:600px) {
+    /* Stack all non-header content on phones. */
+    main>section:first-child {
+        flex-direction: column;
+        align-items: stretch;
+        padding: 50px 6%;
+        gap: 35px;
+    }
+
+    main>section:first-child>div:first-child,
+    main>section:first-child>div:last-child {
+        width: 100%;
+    }
+
+    main>section:first-child h1 {
+        font-size: 38px;
+    }
+
+    main>section:first-child p {
+        font-size: 17px;
+    }
+
+        main>section:first-child button,
+        main>section:first-child .hero-button {
+        margin: 0 6px 10px 0;
+        padding: 12px 16px;
+    }
+
+    main>section:not(:first-child) {
+        padding: 55px 6%;
+    }
+
+    main>section:not(:first-child)>h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    main>section:nth-child(2)>div,
+    main>section:nth-child(3)>div,
+    main>section:nth-child(4)>div,
+    main>section:nth-child(5)>div {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    main article {
+        padding: 24px;
+    }
+
+    main>section:nth-child(6) li {
+        padding: 15px 5px;
+    }
+
+    footer {
+        grid-template-columns: 1fr 1fr;
+        padding: 45px 6%;
+        gap: 28px 20px;
+    }
+}
+
+

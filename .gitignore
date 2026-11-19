@@ -1,0 +1,18 @@
+# Local secrets and dependencies
+server/.env
+server/node_modules/
+node_modules/
+
+# Runtime and editor files
+*.log
+npm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/
+coverage/
+# Local runtime files
+server/current-tunnel-url.txt
+server/tunnel-logs/
+# Local runtime files
+server/current-tunnel-url.txt
+server/tunnel-logs/

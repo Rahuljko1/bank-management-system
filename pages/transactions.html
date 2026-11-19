@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+    <meta name="description" content="Review recent activity in your Smart Bank transaction history.">
+    <title>Smart Bank | Transactions</title>
+    <link rel="stylesheet" href="../css/app.css">
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/editorial.css">
+</head>
+
+<body class="app-page" data-page="transactions">
+    <header aria-label="Site header"></header>
+    <main class="page app-content">
+        <h1 class="title">Transaction history</h1>
+        <p class="subtitle">Search and filter your account ledger.</p>
+        <p data-api-message class="api-message" role="status" aria-live="polite" hidden></p>
+        <form id="transaction-filters" class="filter-row">
+            <label for="transaction-search">Search<input id="transaction-search" name="search" type="search" placeholder="Description or account"></label>
+            <label for="transaction-type">Type<select id="transaction-type" name="type"><option value="">All</option><option value="credit">Credit</option><option value="debit">Debit</option></select></label>
+            <label for="transaction-from">From<input id="transaction-from" name="from" type="date"></label>
+            <label for="transaction-to">To<input id="transaction-to" name="to" type="date"></label>
+            <button type="submit">Apply filters</button>
+            <button type="button" class="secondary" data-export-csv>Download CSV</button>
+        </form>
+        <div class="box table-wrap" role="region" aria-label="Transaction history table" tabindex="0">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Description</th>
+                        <th>Category</th>
+                        <th>Type</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody data-transaction-rows></tbody>
+            </table>
+        </div>
+        <p data-transaction-status role="status" aria-live="polite">Loading transactions…</p>
+        <div class="pager"><button type="button" data-page-prev disabled>Previous</button><button type="button" data-page-next disabled>Next</button></div>
+    </main>
+    <footer aria-label="Site footer"></footer>
+    <script type="module" src="../js/hey.js?v=session-nav-1"></script>
+</body>
+
+</html>
